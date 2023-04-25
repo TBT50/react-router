@@ -1,11 +1,22 @@
-import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+      <nav className="bg-gray-800 p-4">
+        <ul className="flex items-center">
+          <li>
+            <Link to="/" className="text-gray-300 p-2 hover:text-white">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="text-gray-300 p-2 hover:text-white">
+              About
+            </Link>
+          </li>
+        </ul>
+      </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -15,11 +26,11 @@ function App() {
 }
 
 function HomePage() {
-  return <h1>Home</h1>;
+  return <h1 className="text-4xl">Home</h1>;
 }
 
 function AboutPage() {
-  return <h1>About</h1>;
+  return <h1 className="text-4xl">About</h1>;
 }
 
 export default App;
