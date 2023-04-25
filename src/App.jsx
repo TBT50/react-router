@@ -1,36 +1,22 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
+import { Header } from "./components/Header";
+import { Layout } from "./components/Layout";
+import { HomePage } from "./pages/Home";
+import { AboutPage } from "./pages/About";
 
 function App() {
   return (
     <>
-      <nav className="bg-gray-800 p-4">
-        <ul className="flex items-center">
-          <li>
-            <Link to="/" className="text-gray-300 p-2 hover:text-white">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="text-gray-300 p-2 hover:text-white">
-              About
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Routes>
+      <Header />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+      </Layout>
     </>
   );
-}
-
-function HomePage() {
-  return <h1 className="text-4xl">Home</h1>;
-}
-
-function AboutPage() {
-  return <h1 className="text-4xl">About</h1>;
 }
 
 export default App;
